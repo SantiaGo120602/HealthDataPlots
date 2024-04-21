@@ -11,6 +11,8 @@ def index():
 
 @app.route("/plotting")
 def plotting_page():
+    from wfdb_processing import hola
+    hola.test()
     return render_template("plotting.html")
 
 
