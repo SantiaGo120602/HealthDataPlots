@@ -11,6 +11,10 @@ run_with_ngrok(app)
 def index():
     return render_template("index.html")
 
+@app.route("/plotting")
+def plotting_page():
+    return render_template("plotting.html")
+
 
 if __name__ == "__main__":
     app.run()
