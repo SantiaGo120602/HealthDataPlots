@@ -23,8 +23,8 @@ def plotting_page():
         column_names = ("edad", "sexo", "Ubicación", "Fuente")
         column_values = tuple(com for com in comments.split(" ") if com[0] != "<")[:4]
     else:
-        column_names = ("Tipo de prueba")
-        column_values = tuple(comments)
+        column_names = ["Tipo de prueba"]
+        column_values = [comments]
     return render_template("plotting.html", plot_s = plot_s, records = records, column_values = column_values, column_names = column_names, patient = CURRENT_PATIENT)
 
 @app.route("/wfdb_databases")

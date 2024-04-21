@@ -1,8 +1,7 @@
 import wfdb
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import plotly.io as pio
-from .paths import get_bases_and_path_dict
+
 plt.ioff()
 
 def generate_plot_and_comments(record_path: str) -> tuple[go.Figure, str]:
