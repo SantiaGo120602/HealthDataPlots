@@ -36,4 +36,21 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('.dropdown-item').click(function(event) {
+        event.preventDefault();
+        var source = $(this).data('source');
+        $.ajax({
+            url: '/update_record',
+            method: 'POST',
+            data: {source: source},
+            success: function(response) {
+                window.location.href = response;
+            },
+            error: function(xhr, status, error) {
+                console.error("Error making POST request:", error);
+            }
+        });
+    });
+
 });

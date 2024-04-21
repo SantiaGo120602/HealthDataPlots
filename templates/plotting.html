@@ -5,9 +5,11 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
   <h1 class="h2">Data</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
+    
     <div class="btn-group mr-2">
-      <button class="btn btn-sm btn-outline-secondary">Compartir</button>
-      <button class="btn btn-sm btn-outline-secondary">Exportar</button>
+      <a href="/download-report" target="_blank"></a>
+        <a href="/download-report" target="_blank" class="btn btn-sm btn-outline-secondary">Exportar reporte</a>
+      </a>
     </div>
   </div>
 </div>
@@ -18,7 +20,7 @@
   </button>
   <div class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
     {% for record in records %}
-      <a class="dropdown-item" href="#">{{record}}</a>
+      <a class="dropdown-item" href="/update_record" data-source="{{ record }}">{{record}}</a>
     {% endfor %}
   </div>
 </div>

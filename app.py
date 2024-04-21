@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, send_file
 from wfdb_processing.paths import get_bases_and_path_dict
 from wfdb_processing.plotting import generate_plot_and_comments
 
@@ -39,6 +39,24 @@ def process_data():
         CURRENT_BASE = source
         CURRENT_PATIENT = WFDB_TO_RECORD[CURRENT_BASE][0]
         return "/plotting"
+    
+@app.route("/update_record", methods=["POST"])
+def update_record():
+    if request.method == "POST":
+        source = request.form.get("source")
+        global CURRENT_PATIENT
+        CURRENT_PATIENT = source
+        return "/plotting"
+    
+@app.route("/download-report", methods=["GET"])
+def download_report():
+    file_path = CURRENT_PATIENT + ".hea"
+    print(file_path)
+    return send_file(file_path, as_attachment=True)
+
+@app.route("/help")
+def help_page():
+    return render_template("help.html")
 
 if __name__ == "__main__":
     app.run()
