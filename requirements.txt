@@ -6,7 +6,6 @@ click==8.1.7
 contourpy==1.2.1
 cycler==0.12.1
 Flask==3.0.3
-flask-ngrok @ git+https://github.com/gstaff/flask-ngrok@33a2e70898c4fb72b645715dacd8789769a99350
 Flask-SQLAlchemy==3.1.1
 fonttools==4.51.0
 greenlet==3.0.3
