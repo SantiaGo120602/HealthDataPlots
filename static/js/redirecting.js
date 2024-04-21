@@ -16,4 +16,11 @@ $(document).ready(function() {
             window.location.href = redirectUrl;
         }
     });
+
+    $('principal-page-button').click(function(event) {
+        event.preventDefault(); // Prevent default behavior of anchor tag
+        // Get the URL from the href attribute of the clicked element
+        var redirectUrl = $(this).attr('href');
+        window.location.href = redirectUrl;        
+    });
 });
