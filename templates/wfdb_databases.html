@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block maincontent %}
+
+<main role="main" class="inner cover d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card text-center" style="width: 18rem;">
+    <img class="card-img-top" src="{{url_for('static', filename='images/physionet-logo.jpg')}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Bases de datos disponibles</h5>
+      <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      {% for source in wfdb_sources %}
+        <li class="list-group-item">
+          <a href="#" class="card-link" data-source="{{ source }}">{{ source }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+
+{% endblock %}
